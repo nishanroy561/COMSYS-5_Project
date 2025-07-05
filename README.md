@@ -1,6 +1,21 @@
 # COMSYS-5 Project
 
-Real-time gender classification and dataset analysis system.
+Real-time gender classification and Face Recognition with FACECOM dataset.
+
+## Architecture Overview
+
+**TASK_A: Gender Classification**
+- Uses a pre-trained ResNet-18 convolutional neural network as the backbone.
+- Fine-tuned for binary classification (male/female).
+- Input images are resized to 224x224 and normalized using ImageNet statistics.
+- Faces are detected using OpenCV's Haar Cascade classifier before classification.
+- A bias correction threshold is applied to improve prediction reliability.
+
+**TASK_B: Face Recognition**
+- Loads and analyzes PyTorch embedding files for the training set.
+- Scans directory structures for both training and validation datasets.
+- Computes statistics: number of people, images, embeddings, and overlap between train/val sets.
+- Reports results and highlights any missing or mismatched data.
 
 # Evaluation Reports
 
@@ -108,18 +123,3 @@ python eval.py
 - Python 3.8+
 - Webcam (for real-time detection)
 - 100MB+ disk space
-
-## Architecture Overview
-
-**TASK_A: Gender Classification**
-- Uses a pre-trained ResNet-18 convolutional neural network as the backbone.
-- Fine-tuned for binary classification (male/female).
-- Input images are resized to 224x224 and normalized using ImageNet statistics.
-- Faces are detected using OpenCV's Haar Cascade classifier before classification.
-- A bias correction threshold is applied to improve prediction reliability.
-
-**TASK_B: Face Recognition**
-- Loads and analyzes PyTorch embedding files for the training set.
-- Scans directory structures for both training and validation datasets.
-- Computes statistics: number of people, images, embeddings, and overlap between train/val sets.
-- Reports results and highlights any missing or mismatched data.
