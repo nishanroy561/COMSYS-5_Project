@@ -118,7 +118,7 @@ python eval.py
 - Faces are detected using OpenCV's Haar Cascade classifier before classification.
 - A bias correction threshold is applied to improve prediction reliability.
 
-**TASK_B: Dataset Analysis**
+**TASK_B: Face Recognition**
 - Loads and analyzes PyTorch embedding files for the training set.
 - Scans directory structures for both training and validation datasets.
 - Computes statistics: number of people, images, embeddings, and overlap between train/val sets.
